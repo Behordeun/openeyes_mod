@@ -1,0 +1,2 @@
+# Run to send the day's correspondence to docman
+${CRON_DOCMANDELIVERY_SCH:-00 21 * * *}   bash $WROOT/protected/scripts/cronrunner.sh '[ ! -z "${OE_DOCMAN_EXPORT_DIRECTORY}" ] && $WROOT/protected/scripts/docmandelivery.sh || echo disabled'

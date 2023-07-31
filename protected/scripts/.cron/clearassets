@@ -1,0 +1,2 @@
+# Clears the assets folder at the start of each month (purely for maintenance)
+00 05 1 * *    rm -rf $WROOT/assets >dev/null 2>&1

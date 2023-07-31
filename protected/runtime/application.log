@@ -1,0 +1,549 @@
+2023/07/28 00:04:12 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1698] Access denied for user 'openeyes'@'localhost' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/28 00:10:30 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/28 00:12:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openeyes.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2023/07/28 00:12:29 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id).
+2023/07/28 00:12:29 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id) in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1278): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(178): CDbCommand->insert()
+#2 /var/www/openeyes/protected/components/OEMigration.php(173): CDbMigration->insert()
+#3 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(3281): OEMigration->initialiseData()
+#4 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/28 00:45:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect integer value: '' for column `openeyes`.`doctor_grade`.`has_pcr_risk` at row 1. The SQL statement executed was: INSERT INTO `doctor_grade` (`id`, `grade`, `display_order`, `has_pcr_risk`) VALUES (:id, :grade, :display_order, :has_pcr_risk).
+2023/07/28 01:12:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE openeyes.cancel_patient_bookings does not exist. The SQL statement executed was: UPDATE `patient` SET `is_deceased`=:is_deceased WHERE date_of_death IS NOT NULL.
+2023/07/28 01:12:10 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE openeyes.cancel_patient_bookings does not exist. The SQL statement executed was: UPDATE `patient` SET `is_deceased`=:is_deceased WHERE date_of_death IS NOT NULL in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1313): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(212): CDbCommand->update()
+#2 /var/www/openeyes/protected/migrations/m160614_085916_patient_is_deceased_flag.php(10): CDbMigration->update()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m160614_085916_patient_is_deceased_flag->up()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#11 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#12 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#13 {main}
+---
+2023/07/31 22:00:44 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'is_deceased'. The SQL statement executed was: ALTER TABLE `patient` ADD `is_deceased` tinyint not null default 0.
+2023/07/31 22:00:44 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'is_deceased'. The SQL statement executed was: ALTER TABLE `patient` ADD `is_deceased` tinyint not null default 0 in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1405): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(303): CDbCommand->addColumn()
+#2 /var/www/openeyes/protected/migrations/m160614_085916_patient_is_deceased_flag.php(7): CDbMigration->addColumn()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m160614_085916_patient_is_deceased_flag->up()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#11 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#12 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#13 {main}
+---
+2023/07/31 22:02:14 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 22:02:25 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 22:15:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect integer value: '' for column `openeyes`.`doctor_grade`.`has_pcr_risk` at row 1. The SQL statement executed was: INSERT INTO `doctor_grade` (`id`, `grade`, `display_order`, `has_pcr_risk`) VALUES (:id, :grade, :display_order, :has_pcr_risk).
+2023/07/31 22:51:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE openeyes.cancel_patient_bookings does not exist. The SQL statement executed was: UPDATE `patient` SET `is_deceased`=:is_deceased WHERE date_of_death IS NOT NULL.
+2023/07/31 22:51:24 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE openeyes.cancel_patient_bookings does not exist. The SQL statement executed was: UPDATE `patient` SET `is_deceased`=:is_deceased WHERE date_of_death IS NOT NULL in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1313): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(212): CDbCommand->update()
+#2 /var/www/openeyes/protected/migrations/m160614_085916_patient_is_deceased_flag.php(10): CDbMigration->update()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m160614_085916_patient_is_deceased_flag->up()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#11 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#12 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#13 {main}
+---
+2023/07/31 23:02:15 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:02:34 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:04:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openeyes.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2023/07/31 23:04:20 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id).
+2023/07/31 23:04:20 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id) in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1278): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(178): CDbCommand->insert()
+#2 /var/www/openeyes/protected/components/OEMigration.php(173): CDbMigration->insert()
+#3 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(3281): OEMigration->initialiseData()
+#4 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:23:49 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'address' already exists. The SQL statement executed was: CREATE TABLE `address` (
+							 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+							 `address1` varchar(255) DEFAULT NULL,
+							 `address2` varchar(255) DEFAULT NULL,
+							 `city` varchar(255) DEFAULT NULL,
+							 `postcode` varchar(10) DEFAULT NULL,
+							 `county` varchar(255) DEFAULT NULL,
+							 `country_id` int(10) unsigned NOT NULL,
+							 `email` varchar(255) DEFAULT NULL,
+							 `last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `last_modified_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `created_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `parent_class` varchar(40) NOT NULL,
+							 `parent_id` int(10) unsigned NOT NULL,
+							 `date_start` datetime DEFAULT NULL,
+							 `date_end` datetime DEFAULT NULL,
+							 `address_type_id` int(10) unsigned DEFAULT NULL,
+							 PRIMARY KEY (`id`),
+							 KEY `address_country_id_fk` (`country_id`),
+							 KEY `address_last_modified_user_id_fk` (`last_modified_user_id`),
+							 KEY `address_created_user_id_fk` (`created_user_id`),
+							 KEY `address_parent_index` (`parent_class`,`parent_id`),
+							 KEY `address_address_type_id_fk` (`address_type_id`),
+							 CONSTRAINT `address_address_type_id_fk` FOREIGN KEY (`address_type_id`) REFERENCES `address_type` (`id`),
+							 CONSTRAINT `address_country_id_fk` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`),
+							 CONSTRAINT `address_created_user_id_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
+							 CONSTRAINT `address_last_modified_user_id_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)
+							)
+							ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2023/07/31 23:23:49 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'address' already exists. The SQL statement executed was: CREATE TABLE `address` (
+							 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+							 `address1` varchar(255) DEFAULT NULL,
+							 `address2` varchar(255) DEFAULT NULL,
+							 `city` varchar(255) DEFAULT NULL,
+							 `postcode` varchar(10) DEFAULT NULL,
+							 `county` varchar(255) DEFAULT NULL,
+							 `country_id` int(10) unsigned NOT NULL,
+							 `email` varchar(255) DEFAULT NULL,
+							 `last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `last_modified_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `created_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `parent_class` varchar(40) NOT NULL,
+							 `parent_id` int(10) unsigned NOT NULL,
+							 `date_start` datetime DEFAULT NULL,
+							 `date_end` datetime DEFAULT NULL,
+							 `address_type_id` int(10) unsigned DEFAULT NULL,
+							 PRIMARY KEY (`id`),
+							 KEY `address_country_id_fk` (`country_id`),
+							 KEY `address_last_modified_user_id_fk` (`last_modified_user_id`),
+							 KEY `address_created_user_id_fk` (`created_user_id`),
+							 KEY `address_parent_index` (`parent_class`,`parent_id`),
+							 KEY `address_address_type_id_fk` (`address_type_id`),
+							 CONSTRAINT `address_address_type_id_fk` FOREIGN KEY (`address_type_id`) REFERENCES `address_type` (`id`),
+							 CONSTRAINT `address_country_id_fk` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`),
+							 CONSTRAINT `address_created_user_id_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
+							 CONSTRAINT `address_last_modified_user_id_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)
+							)
+							ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/protected/components/OEMigration.php(41): CDbCommand->execute()
+#1 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(222): OEMigration->execute()
+#2 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#11 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#12 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#13 {main}
+---
+2023/07/31 23:24:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openeyes.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2023/07/31 23:24:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id).
+2023/07/31 23:24:45 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id) in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1278): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(178): CDbCommand->insert()
+#2 /var/www/openeyes/protected/components/OEMigration.php(173): CDbMigration->insert()
+#3 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(3281): OEMigration->initialiseData()
+#4 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:31:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openeyes.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2023/07/31 23:31:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id).
+2023/07/31 23:31:41 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id) in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1278): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(178): CDbCommand->insert()
+#2 /var/www/openeyes/protected/components/OEMigration.php(173): CDbMigration->insert()
+#3 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(3281): OEMigration->initialiseData()
+#4 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:41:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'address_type' already exists. The SQL statement executed was: CREATE TABLE `address_type` (
+							 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+							 `name` varchar(64) NOT NULL,
+							 `last_modified_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 PRIMARY KEY (`id`),
+							 KEY `address_type_last_modified_user_id_fk` (`last_modified_user_id`),
+							 KEY `address_type_created_user_id_fk` (`created_user_id`),
+							 CONSTRAINT `address_type_created_user_id_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
+							 CONSTRAINT `address_type_last_modified_user_id_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)
+							)
+							ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2023/07/31 23:41:40 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'address_type' already exists. The SQL statement executed was: CREATE TABLE `address_type` (
+							 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+							 `name` varchar(64) NOT NULL,
+							 `last_modified_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 PRIMARY KEY (`id`),
+							 KEY `address_type_last_modified_user_id_fk` (`last_modified_user_id`),
+							 KEY `address_type_created_user_id_fk` (`created_user_id`),
+							 CONSTRAINT `address_type_created_user_id_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
+							 CONSTRAINT `address_type_last_modified_user_id_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)
+							)
+							ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/protected/components/OEMigration.php(41): CDbCommand->execute()
+#1 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(255): OEMigration->execute()
+#2 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#11 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#12 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#13 {main}
+---
+2023/07/31 23:42:12 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:43:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openeyes.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2023/07/31 23:43:03 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id).
+2023/07/31 23:43:03 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id) in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1278): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(178): CDbCommand->insert()
+#2 /var/www/openeyes/protected/components/OEMigration.php(173): CDbMigration->insert()
+#3 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(3281): OEMigration->initialiseData()
+#4 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:47:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'address' already exists. The SQL statement executed was: CREATE TABLE `address` (
+							 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+							 `address1` varchar(255) DEFAULT NULL,
+							 `address2` varchar(255) DEFAULT NULL,
+							 `city` varchar(255) DEFAULT NULL,
+							 `postcode` varchar(10) DEFAULT NULL,
+							 `county` varchar(255) DEFAULT NULL,
+							 `country_id` int(10) unsigned NOT NULL,
+							 `email` varchar(255) DEFAULT NULL,
+							 `last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `last_modified_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `created_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `parent_class` varchar(40) NOT NULL,
+							 `parent_id` int(10) unsigned NOT NULL,
+							 `date_start` datetime DEFAULT NULL,
+							 `date_end` datetime DEFAULT NULL,
+							 `address_type_id` int(10) unsigned DEFAULT NULL,
+							 PRIMARY KEY (`id`),
+							 KEY `address_country_id_fk` (`country_id`),
+							 KEY `address_last_modified_user_id_fk` (`last_modified_user_id`),
+							 KEY `address_created_user_id_fk` (`created_user_id`),
+							 KEY `address_parent_index` (`parent_class`,`parent_id`),
+							 KEY `address_address_type_id_fk` (`address_type_id`),
+							 CONSTRAINT `address_address_type_id_fk` FOREIGN KEY (`address_type_id`) REFERENCES `address_type` (`id`),
+							 CONSTRAINT `address_country_id_fk` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`),
+							 CONSTRAINT `address_created_user_id_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
+							 CONSTRAINT `address_last_modified_user_id_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)
+							)
+							ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci.
+2023/07/31 23:47:08 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'address' already exists. The SQL statement executed was: CREATE TABLE `address` (
+							 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+							 `address1` varchar(255) DEFAULT NULL,
+							 `address2` varchar(255) DEFAULT NULL,
+							 `city` varchar(255) DEFAULT NULL,
+							 `postcode` varchar(10) DEFAULT NULL,
+							 `county` varchar(255) DEFAULT NULL,
+							 `country_id` int(10) unsigned NOT NULL,
+							 `email` varchar(255) DEFAULT NULL,
+							 `last_modified_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `last_modified_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `created_user_id` int(10) unsigned NOT NULL DEFAULT '1',
+							 `created_date` datetime NOT NULL DEFAULT '1900-01-01 00:00:00',
+							 `parent_class` varchar(40) NOT NULL,
+							 `parent_id` int(10) unsigned NOT NULL,
+							 `date_start` datetime DEFAULT NULL,
+							 `date_end` datetime DEFAULT NULL,
+							 `address_type_id` int(10) unsigned DEFAULT NULL,
+							 PRIMARY KEY (`id`),
+							 KEY `address_country_id_fk` (`country_id`),
+							 KEY `address_last_modified_user_id_fk` (`last_modified_user_id`),
+							 KEY `address_created_user_id_fk` (`created_user_id`),
+							 KEY `address_parent_index` (`parent_class`,`parent_id`),
+							 KEY `address_address_type_id_fk` (`address_type_id`),
+							 CONSTRAINT `address_address_type_id_fk` FOREIGN KEY (`address_type_id`) REFERENCES `address_type` (`id`),
+							 CONSTRAINT `address_country_id_fk` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`),
+							 CONSTRAINT `address_created_user_id_fk` FOREIGN KEY (`created_user_id`) REFERENCES `user` (`id`),
+							 CONSTRAINT `address_last_modified_user_id_fk` FOREIGN KEY (`last_modified_user_id`) REFERENCES `user` (`id`)
+							)
+							ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/protected/components/OEMigration.php(41): CDbCommand->execute()
+#1 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(222): OEMigration->execute()
+#2 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#5 [internal function]: MigrateCommand->actionUp()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#7 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#11 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#12 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#13 {main}
+---
+2023/07/31 23:53:42 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:56:42 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'openeyes' in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbConnection.php(325): CDbConnection->setActive()
+#2 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(472): CModule->getComponent()
+#4 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(481): MigrateCommand->getDbConnection()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(512): MigrateCommand->getMigrationHistory()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(84): MigrateCommand->getNewMigrations()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---
+2023/07/31 23:57:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'openeyes.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2023/07/31 23:57:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id).
+2023/07/31 23:57:12 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id) in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1278): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(178): CDbCommand->insert()
+#2 /var/www/openeyes/protected/components/OEMigration.php(173): CDbMigration->insert()
+#3 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(3284): OEMigration->initialiseData()
+#4 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}
+---

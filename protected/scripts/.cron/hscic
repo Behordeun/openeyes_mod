@@ -1,0 +1,2 @@
+# Pull latest ODS / HSCIC GP and practice data
+${CRON_HSCIC_SCH:-15 4 * * *}   bash $WROOT/protected/scripts/cronrunner.sh '[ ! -z "${OE_HSCIC_REGION}" ] && bash $WROOT/protected/scripts/import-hscic-data.sh --region ${OE_HSCIC_REGION} || echo disabled'

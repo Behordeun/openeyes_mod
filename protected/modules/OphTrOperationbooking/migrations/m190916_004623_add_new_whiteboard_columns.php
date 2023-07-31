@@ -1,0 +1,125 @@
+<?php
+
+class m190916_004623_add_new_whiteboard_columns extends OEMigration
+{
+    public function up()
+    {
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'axial_length',
+            'varchar(100)',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'acd',
+            'varchar(100)',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'formula',
+            'varchar(100)',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'aconst',
+            'varchar(100)',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'complexity',
+            'int',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'axis',
+            'decimal(6, 1)',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'flat_k',
+            'decimal(6, 2)',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'steep_k',
+            'decimal(6, 2)',
+            true
+        );
+        $this->addOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'biometry_report_id',
+            'int',
+            true
+        );
+
+        $this->addForeignKey(
+            'ophtroperationbooking_whiteboard_biom_report_fk',
+            'ophtroperationbooking_whiteboard',
+            'biometry_report_id',
+            'et_ophcodocument_document',
+            'id'
+        );
+    }
+
+    public function down()
+    {
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'axial_length',
+            true
+        );
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'acd',
+            true
+        );
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'formula',
+            true
+        );
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'aconst',
+            true
+        );
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'complexity',
+            true
+        );
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'axis',
+            true
+        );
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'flat_k',
+            true
+        );
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'steep_k',
+            true
+        );
+
+        $this->dropForeignKey(
+            'ophtroperationbooking_whiteboard_biom_report_fk',
+            'ophtroperationbooking_whiteboard'
+        );
+
+        $this->dropOEColumn(
+            'ophtroperationbooking_whiteboard',
+            'biometry_report_id',
+            true
+        );
+    }
+}

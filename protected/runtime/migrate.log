@@ -1,0 +1,532 @@
+
+Yii Migration Tool v1.0 (based on Yii v1.1.23)
+
+Creating migration history table "tbl_migration"...done.
+Total 359 new migrations to be applied:
+    m130913_000000_consolidation
+    m131009_083758_record_no_allergies
+    m131015_125648_proc_aliases
+    m131016_091958_proc_term_index
+    m131104_112734_authitems
+    m131108_154456_remove_access_level
+    m131111_111111_remove_obsolete_models
+    m131128_083823_fix_broken_foreign_keys
+    m131128_095756_missing_fields
+    m131128_111820_primary_key_for_proc_opcs_assignment
+    m131211_094237_custom_episode_summaries
+    m140116_102828_event_deletion_reason
+    m140116_110606_event_pending
+    m140123_110553_add_static_correspondencename_for_cbs
+    m140204_134240_systemic_diagnosis_shortcode
+    m140210_132147_address_foreign_key
+    m140214_084926_anaesthetic_type_display_order
+    m140214_092306_remove_unused_tables
+    m140220_164630_drop_dead_contact_tables
+    m140220_235959_table_versioning
+    m140226_122531_add_measurement_tables
+    m140310_122107_api_authitems
+    m140317_171751_update_referral_model
+    m140327_144537_oprnrequesteventdeletion
+    m140328_082747_add_rtt
+    m140411_095052_event_inheritance
+    m140506_152147_rtt_versioning
+    m140515_160812_medication_history
+    m140516_130427_version_table_discrepencies
+    m140516_145619_social_history
+    m140521_102600_reports_auth
+    m140521_150455_patient_history_rbac
+    m140523_080847_social_history_table_versioning
+    m140523_090000_add_event_date
+    m140527_104913_commondisorder_secondarychoices
+    m140610_143459_medication_adherence_and_comments
+    m140610_144738_common_previous_operations
+    m140610_152528_medication_reasons_for_stopping
+    m140619_134752_nullable_fuzzy_dates
+    m140620_140021_pseudopemphigoid_spelling
+    m140620_165450_driving_status_update
+    m140625_123445_remove_textbox_from_common_operations
+    m140626_143836_child_events
+    m140708_152118_anaesthetic_type_order
+    m140711_115850_contact_version_index
+    m140715_121750_enable_view_protected_files
+    m140715_124020_ep_start_date_default
+    m140718_131304_genetics_extra_contact_fields
+    m140718_132919_patient_father_mother_relation
+    m140718_135220_patient_extra_fields
+    m140729_092047_event_version_table_parent_id
+    m140730_130555_family_history_tweaks
+    m140730_145611_fix_measurement_reference_keys
+    m140804_100857_wider_drug_lookup
+    m140804_112644_genetics_extra_contact_fields_version
+    m140806_102914_allergy_other
+    m140811_073348_non_element_type_setting_for_html_autocomplete
+    m140818_121930_add_comments_to_patient_allergy
+    m140820_140643_advanced_search_rbac
+    m140821_133028_smoking_status_active_field
+    m140917_112906_event_type_permissions
+    m140918_084932_driving_status_multiselect
+    m140919_134132_common_ophthalmic_disorder_null
+    m141007_114602_specific_eye_diagnosis_shortcode
+    m141020_101017_common_oph_disorder_sort
+    m141119_160736_common_ophthalmic_disorder_groups
+    m141119_163500_findings
+    m141120_142152_primary_common_ophthalmic_disorder
+    m141120_162720_alternate_common_opthalmic_disorder_label
+    m141120_164600_findings_in_common_oph_disorder
+    m141124_085310_finding_descriptions
+    m141124_110900_findings_in_secondary_to_common_oph_disorder
+    m141125_125851_secondary_common_disorder_letter_macro_field
+    m141202_162356_no_family_history
+    m141208_135800_audit_model_unique
+    m141217_134213_pdf_footer_tag
+    m150401_124559_params
+    m150407_095041_sitewide_incision_length
+    m150422_140607_medication_common
+    m150505_113604_doctor_grade
+    m150505_113733_add_grade_reg_code
+    m150508_152907_patientRisks
+    m150526_091657_allergyAddDisplayOrder
+    m150608_144157_increase_commisioning_body_name_limit
+    m151015_120507_proc_subspecialty_assignment_add_ordering
+    m151123_173403_create_dicom_file_watcher_tables
+    m151202_144842_dicom_log_file_table
+    m160202_104442_add_gp_active_flag
+    m160202_130039_add_practice_active_flag
+    m160209_104243_change_pas_code_length
+    m160216_150501_store_pcr_risk_options
+    m160217_115954_add_setting_manual_biometry_off
+    m160310_121034_link_medication_and_prescription
+    m160311_105813_NOD_export_RBAC
+    m160318_132703_new_doctor_grades
+    m160421_131246_add_indexes_to_HSCIC_tables
+    m160425_095432_create_patient_merge_request_table
+    m160426_105008_add_deleted_flag_to_patient
+    m160426_222411_unique_codes
+    m160503_142416_initial_worklist_models
+    m160504_102700_unique_code_mapping
+    m160510_075145_add_automatic_worklists
+    m160517_083543_automated_event
+    m160517_085926_add_media_storage_tables
+    m160517_103422_add_patient_merge_RBAC_rules
+    m160519_105335_add_new_risks
+    m160520_144440_add_deleted_flag_patient_merge_request
+    m160525_092545_user
+    m160603_140012_display_institution_name
+    m160606_150502_city_satellite_settings
+    m160610_130617_nhs_num_verification
+    m160614_085916_patient_is_deceased_flag
+    m160622_094034_alter_settings_value_size
+    m160711_125908_unique_columns_unique_code_mapping
+    m160714_084347_constrain_worklist_attributes
+    m160819_171457_add_user_signature
+    m160823_100518_add_user_id_to_unique_codes_mapping
+    m160831_133149_doctor_risk_grades
+    m160909_100958_update_medical_retinal
+    m160915_093448_add_document_management_tables
+    m160928_073106_drop_medication_frequency_foreign_key
+    m161006_104513_support_hours
+    m161021_102624_genetic_patient_relations
+    m161026_135722_remove_patient_merge_unique_audit_action
+    m161112_115907_move_ToCc_from_doc_output_to_target
+    m161210_150415_add_correspondence_banner_settings
+    m161219_195513_add_user_is_technician_field
+    m161222_161414_docman_log
+    m170110_152227_remove_migration_route_fk
+    m170118_145106_remove_is_tech
+    m170124_151953_update_shortcodes
+    m170126_161056_docmandb_changes
+    m170126_164355_add_is_local_flag_to_patient
+    m170127_102601_add_patient_create_role
+    m170222_132650_add_new_fields_to_drug_set_item
+    m170228_103424_add_6days_drug_duration
+    m170228_122555_remove_route_option_id_from_drug_set_item_table
+    m170307_191643_add_enable_prescriptions_sys_setting
+    m170310_114213_add_new_system_setting
+    m170314_104129_add_new_system_setting_require_exam_before_booking
+    m170315_134817_add_national_code_to_drugs_table
+    m170317_132408_add_items_to_audit_action
+    m170331_085338_change_contact_table_collation
+    m170413_144855_firm_service_context
+    m170427_111005_introduce_change_episode
+    m170502_184511_tags_feature
+    m170516_101300_CXL_dataset_RBAC
+    m170719_102032_object_persistence_core
+    m170801_101109_change_maiden_name_collation
+    m170814_140450_user_voice
+    m170815_080800_add_system_setting_concse_meds
+    m170908_141900_tag_known_anticoagulant_meds
+    m170913_135250_confirm_v2_disorders
+    m170917_101700_add_system_setting_worklist_future_days
+    m170920_124649_add_init_always_flag_eyedraw_config
+    m171004_134833_audit_rbac
+    m171005_170953_track_tourstates
+    m171109_022117_add_firm_id_to_event
+    m171212_162200_add_extra_vr_procedure
+    m180109_100900_rename_system_setting_disable_correspondence_notes_copy
+    m180116_181338_add_is_printable_to_event_type
+    m180125_034319_add_display_theme_setting
+    m180208_034437_add_element_type_tile
+    m180215_155226_adding_system_setting_tour_disable
+    m180216_113647_non_local_users_passwords_reset
+    m180227_104600_add_disorders
+    m180316_112628_drop_user_is_doctor_flag
+    m180414_125301_add_system_setting_FORUM
+    m180416_031716_add_element_group_title_column
+    m180418_051126_create_hotlist_item_table
+    m180501_092100_add_disorders
+    m180504_085000_medication_duration_table_and_import
+    m180504_085420_medication_management_tables
+    m180506_111023_medication_drugs_import
+    m180508_094400_add_stat_frequency
+    m180509_130331_medication_laterality_and_import
+    m180529_132013_create_correspondence_letter_settings_table
+    m180601_104426_create_oescape_summary_table
+    m180603_225310_add_enable_notattip_warning_setting
+    m180604_091904_add_column_short_term_to_medications
+    m180605_115100_add_NHS_num_label_setting
+    m180611_155900_add_pas_visit_id_to_event
+    m180612_122935_increase_text_length_in_benefits_and_complication
+    m180619_032208_create_event_image_table
+    m180712_090533_add_element_close_warning_enabled_setting
+    m180731_094933_change_protected_file_name_length
+    m180801_143907_add_disorder_date_to_episode
+    m180809_064900_medication_allergy_assignment
+    m180815_071733_add_set_common_subspecialty_medications
+    m180822_234054_add_specialty_short_name_column
+    m180828_063658_add_ref_set_common_systemic_medications
+    m180831_083440_new_drug_shortcodes
+    m180907_024108_change_phaco_short_term
+    m180910_044802_uservoice_remove
+    m180924_020617_add_county_label_setting
+    m180925_015427_add_gp_label_setting
+    m180925_103049_delete_clinically_trained_from_user_table
+    m180926_034534_create_patient_identifier_table
+    m180926_161300_set_require_confirm_to_on
+    m180927_050129_add_general_practitioner_label_setting
+    m181002_060619_add_keys_to_med_tables
+    m181025_135400_add_user_and_admin_banner_short_to_config
+    m181105_005610_add_patient_source_to_patient
+    m181105_014350_add_patient_referral_table
+    m181105_034036_create_patient_user_referral_table
+    m181106_053629_set_auto_increment_hospital_number
+    m181107_000226_set_hos_num_auto_increment_starting_number
+    m181107_031357_cera_ethnic_groups
+    m181108_003245_create_levenshtein_function
+    m181113_015315_add_gp_management_roles
+    m181116_163210_remove_city_road_and_satellite_options_admin
+    m181119_033626_add_practice_management_roles
+    m181120_175400_add_complog_port_to_config
+    m181127_142335_add_disorder_metallic_body
+    m181128_061013_user_add_disorder
+    m181205_155159_create_icons_table
+    m181205_160624_create_icon_id_column_for_nhs_number_status
+    m181211_142626_add_cost_code_to_firm
+    m190115_004629_add_service_manager_role
+    m190122_102950_add_show_attachments_column_to_event_type_table
+    m190123_104141_add_rbac_operation_suffix_to_event_type_version
+    m190130_055520_add_disorder_management_roles
+    m190201_132020_medication_attributes
+    m190212_084033_add_indices_to_medication
+    m190214_102307_automatic_medication_sets
+    m190215_102307_create_sets_from_tags
+    m190303_185200_add_report_views
+    m190313_103152_add_column_for_event_type_to_hide_from_manual_creation
+    m190315_072355_allergies_to_sets
+    m190320_122128_add_has_laterality_to_medication_route
+    m190321_141548_unbooked_worklist_data_migration
+    m190326_143443_add_element_group_for_specular_microscopy
+    m190327_153817_add_aliases_to_disorder_table
+    m190401_115247_rename_history_medications_element
+    m190402_120500_remove_system_setting_worklist_future_days
+    m190402_121449_add_new_columns_to_contact_table
+    m190402_122951_add_is_private_to_contact_type
+    m190403_161000_add__more_report_views
+    m190403_233858_increase_contact_name_size_for_practice_name
+    m190412_151923_create_default_country_system_setting
+    m190415_102000_clean_unused_contact_labels
+    m190415_102116_change_gps_contact_label_to_general_practicioner
+    m190415_103314_add_new_contact_labels
+    m190426_105513_add_max_num_per_patient_to_contact_label
+    m190430_082049_add_limits_to_gp_and_optom_contact_labels
+    m190501_115600_remove_date_from_worklist_names
+    m190502_151159_add_system_setting_for_include_subspecialty_name_in_unbooked_worklists
+    m190510_151314_event_subtype_items_and_icons
+    m190514_162942_add_default_drugset_letter_settings
+    m190517_113108_remove_medication_set_default_form
+    m190517_131302_add_optometrist_to_enum
+    m190523_130701_alter_constraint_drug_allergy_assignment_allergy_id_fk
+    m190531_160825_change_unbooked_worklist_settings
+    m190604_133753_create_plans
+    m190607_104648_add_a_setting_for_portal_optometrist_contact_saving
+    m190607_131227_add_new_option_to_default_pre_assessment_booking_value_setting
+    m190611_082156_change_display_order_of_biometry_operation_note
+    m190612_083036_medication_merge_create_table
+    m190613_004744_add_multiple_contacts_to_patient
+    m190620_075532_update_drug_national_code
+    m190627_074058_add_rotate_column_protected_file
+    m190812_122500_update_view_v_patient_details
+    m190814_013145_add_import_log_tables
+    m190815_080206_create_imagenet_url
+    m190822_021939_add_practice_id_to_patient_contact_associate_table
+    m190827_010131_add_provider_no_contact_practice_associate_table
+    m190904_043756_increase_import_message_size
+    m190905_005939_add_provider_no_to_contact_practice_associate_version_table
+    m190912_091418_migrate_tags_to_medication_sets
+    m190918_012016_add_recent_context_firm_limit_setting
+    m190919_014602_add_more_import_statuses
+    m191001_024153_set_default_country
+    m191009_144720_add_oct_event_sub_type
+    m191014_125600_add_a_setting_to_shorten_page_titles
+    m191029_172959_move_sets_to_autoset
+    m191107_112503_add_new_permission_for_sending_letter
+    m191114_005603_add_tech_support_contact_settings
+    m191115_205527_remove_forum_force_refresh_setting
+    m191125_091623_create_event_icon_table
+    m191126_032957_rename_set_auto_increment_setting
+    m191127_005343_add_side_overview_settings
+    m191128_142435_add_attachment_to_element_type_for_biometry
+    m191209_124917_add_comments_to_drops
+    m191212_230334_set_nhs_number_length
+    m191213_182917_extend_mview_datapoint_node_json_content
+    m191224_115246_add_display_order_to_subspecialty_subsection
+    m191225_045407_create_groups_for_systemic_disorders
+    m200106_010919_add_email_column_to_firm_table
+    m200114_164139_change_display_order_of_pupillary_abnormalities
+    m200115_001547_add_nhs_hos_num_label_short
+    m200121_154701_add_short_names_to_doctor_grade
+    m200130_044814_add_logos_to_site
+    m200210_182100_drop_drug_drug_type_view
+    m200211_124300_fix_old_medication_views
+    m200221_000912_correspondence_email_parameters
+    m200223_184900_fix_missing_version_columns_before_set_default
+    m200223_184911_fix_columns_with_no_defaults_that_arent_set
+    m200227_045838_indexSearch_table
+    m200304_052536_add_custom_text_to_events_and_elements
+    m200307_070914_modify_enum_output_status_column_document_output_table
+    m200313_122500_change_until_review_to_on_going_drug_duration
+    m200330_103504_change_ocular_to_eye_in_medication_route
+    m200330_233741_create_eyedraw_tag_table
+    m200331_013628_create_date_diff_function
+    m200331_075611_change_until_review_to_on_going_medication_duration
+    m200331_095629_add_default_dose_to_medication
+    m200408_234753_remove_unused_empty_contacts
+    m200415_234202_add_patient_phone_number_mandatory_admin_param
+    m200416_025009_add_default_patient_source_param
+    m200416_041530_sso_permissions
+    m200417_104344_add_password_date_and_tries_to_user
+    m200424_131331_replace_address_details
+    m200424_133000_add_hos_num_label
+    m200424_155043_sort_workflow_element_set_order
+    m200501_050311_add_need_eur_column_in_procedureSubspecialtyAssignment
+    m200505_042308_expand_size_of_password_column
+    m200507_055507_add_patient_short_codes
+    m200512_160900_increase_session_id_size
+    m200515_013329_add_header_setting_and_html_field_type
+    m200515_160612_update_elementType_lab_details_table_to_required
+    m200519_015850_increase_value_column_size_for_settings
+    m200605_110001_convert_MyISAM_to_InnoDB
+    m200616_125400_match_contact_version_column_positions
+    m200622_140544_add_training_mode_setting
+    m200706_041346_add_password_softlocked_time_to_user
+    m200716_060218_realign_contact_table_with_versioned
+    m200719_191456_update_search_index_for_doodles
+    m200723_103021_set_findings_in_disorder_inactive
+    m200727_085906_set_longer_var_char_for_name_audit_type
+    m200730_053753_move_email_column_to_contact
+    m200803_011347_modify_contact_table_character_set_collation
+    m200805_123030_archive_unused_drug_tables_following_dmd_import
+    m200806_131131_add_disciform_amd_to_index_search
+    m200811_010042_add_pas_key_column_to_institution
+    m200813_212656_cellsandflare_to_indexsearch
+    m200814_044003_create_out_of_office_table
+    m200830_233756_auto_version_check
+    m200902_004830_add_display_order_to_medication_frequency_table
+    m200929_015852_add_visual_fields_event_sub_type
+    m201026_135422_update_row_format
+    m201029_060203_create_sso_roles_mapping_with_openeyes
+    m201105_223728_Add_uuid_for_ammonite
+    m201110_105728_remove_default_for_snomed_term_in_proc
+    m201111_130012_metadata_version_table_consistency
+    m201116_044256_add_enabled_column_to_default_sso_rights
+    m201124_074945_import_patient_config
+    m201125_101312_upate_shortcode_descriptions
+    m201126_104956_add_default_tech_support_provider
+    m201126_123601_fix_event_type_version_columns
+    m210121_030317_add_found_opnotes_to_past_surgery_element
+    m210408_162600_allow_null_location_for_sites
+    m210608_050813_add_index_statistics_to_patient_tables
+    m210803_211409_adding_footer_column_to_document_instance
+    m210831_123200_set_order_for_banner_settings
+    m210916_092209_add_active_to_medication_route
+    m211024_141549_add_fp10_code_to_site
+    m211206_065754_add_no_ophthalmic_diagnoses_date
+    m220127_063618_add_draft_auto_print_setting
+    m220228_065442_add_disable_draft_correspondence_email_setting
+
+*** applying m130913_000000_consolidation
+		> execute SQL: SET foreign_key_checks = 0... ... done (time: 0.000s)
+		> execute SQL: DROP DATABASE IF EXISTS`openeyes`... ... done (time: 0.011s)
+		> execute SQL: CREATE DATABASE `openeyes`... ... done (time: 0.000s)
+		> execute SQL: USE `openeyes`... ... done (time: 0.000s)
+		> execute SQL: CREATE TABLE `address` (... ... done (time: 0.025s)
+		> execute SQL: CREATE TABLE `address_type` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `allergy` (... ... done (time: 0.014s)
+		> execute SQL: CREATE TABLE `anaesthetic_agent` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `anaesthetic_complication` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `anaesthetic_delivery` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `anaesthetic_type` (... ... done (time: 0.014s)
+		> execute SQL: CREATE TABLE `anaesthetist` (... ... done (time: 0.014s)
+		> execute SQL: CREATE TABLE `audit` (... ... done (time: 0.048s)
+		> execute SQL: CREATE TABLE `audit_action` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `audit_ipaddr` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `audit_model` (... ... done (time: 0.014s)
+		> execute SQL: CREATE TABLE `audit_module` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `audit_server` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `audit_type` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `audit_useragent` (... ... done (time: 0.013s)
+		> execute SQL: CREATE TABLE `authassignment` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `authitem` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `authitemchild` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `benefit` (... ... done (time: 0.014s)
+		> execute SQL: CREATE TABLE `commissioning_body` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `commissioning_body_patient_assignment` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `commissioning_body_practice_assignment` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `commissioning_body_service` (... ... done (time: 0.025s)
+		> execute SQL: CREATE TABLE `commissioning_body_service_type` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `commissioning_body_type` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `common_ophthalmic_disorder` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `common_previous_operation` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `common_systemic_disorder` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `complication` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `consultant` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `contact` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `contact_label` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `contact_location` (... ... done (time: 0.026s)
+		> execute SQL: CREATE TABLE `contact_metadata` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `contact_type` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `country` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `disorder` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `disorder_tree` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `drug` (... ... done (time: 0.029s)
+		> execute SQL: CREATE TABLE `drug_allergy_assignment` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `drug_duration` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `drug_form` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `drug_frequency` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `drug_route` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `drug_route_option` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `drug_set` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `drug_set_item` (... ... done (time: 0.025s)
+		> execute SQL: CREATE TABLE `drug_set_item_taper` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `drug_type` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `element_type` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `element_type_anaesthetic_agent` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `element_type_anaesthetic_complication` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `element_type_anaesthetic_delivery` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `element_type_anaesthetic_type` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `element_type_anaesthetist` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `element_type_eye` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `element_type_priority` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `episode` (... ... done (time: 0.029s)
+		> execute SQL: CREATE TABLE `episode_status` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `ethnic_group` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `event` (... ... done (time: 0.026s)
+		> execute SQL: CREATE TABLE `event_group` (... ... done (time: 0.010s)
+		> execute SQL: CREATE TABLE `event_issue` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `event_type` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `eye` (... ... done (time: 0.011s)
+		> execute SQL: CREATE TABLE `family_history` (... ... done (time: 0.024s)
+		> execute SQL: CREATE TABLE `family_history_condition` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `family_history_relative` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `family_history_side` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `firm` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `firm_user_assignment` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `gender` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `gp` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `import_source` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `institution` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `institution_consultant_assignment` (... ... done (time: 0.023s)
+		> execute SQL: CREATE TABLE `issue` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `language` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `letter_template` (... ... done (time: 0.023s)
+		> execute SQL: CREATE TABLE `manual_contact` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `medication` (... ... done (time: 0.026s)
+		> execute SQL: CREATE TABLE `nsc_grade` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `opcs_code` (... ... done (time: 0.015s)
+		> execute SQL: CREATE TABLE `operative_device` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `patient` (... ... done (time: 0.025s)
+		> execute SQL: CREATE TABLE `patient_allergy_assignment` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `patient_contact_assignment` (... ... done (time: 0.024s)
+		> execute SQL: CREATE TABLE `patient_oph_info` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `patient_oph_info_cvi_status` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `patient_shortcode` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `period` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `person` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `phrase` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `phrase_by_firm` (... ... done (time: 0.024s)
+		> execute SQL: CREATE TABLE `phrase_by_subspecialty` (... ... done (time: 0.024s)
+		> execute SQL: CREATE TABLE `phrase_name` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `practice` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `previous_operation` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `priority` (... ... done (time: 0.010s)
+		> execute SQL: CREATE TABLE `proc` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `proc_opcs_assignment` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `proc_subspecialty_assignment` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `proc_subspecialty_subsection_assignment` (... ... done (time: 0.023s)
+		> execute SQL: CREATE TABLE `procedure_additional` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `procedure_benefit` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `procedure_complication` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `protected_file` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `referral` (... ... done (time: 0.029s)
+		> execute SQL: CREATE TABLE `referral_episode_assignment` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `referral_type` (... ... done (time: 0.013s)
+		> execute SQL: CREATE TABLE `secondary_diagnosis` (... ... done (time: 0.025s)
+		> execute SQL: CREATE TABLE `section` (... ... done (time: 0.014s)
+		> execute SQL: CREATE TABLE `section_type` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `service` (... ... done (time: 0.013s)
+		> execute SQL: CREATE TABLE `service_subspecialty_assignment` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `setting_field_type` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `setting_firm` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `setting_installation` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `setting_institution` (... ... done (time: 0.019s)
+		> execute SQL: CREATE TABLE `setting_metadata` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `setting_site` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `setting_specialty` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `setting_subspecialty` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `setting_user` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `site` (... ... done (time: 0.026s)
+		> execute SQL: CREATE TABLE `site_consultant_assignment` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `site_subspecialty_anaesthetic_agent` (... ... done (time: 0.025s)
+		> execute SQL: CREATE TABLE `site_subspecialty_anaesthetic_agent_default` (... ... done (time: 0.025s)
+		> execute SQL: CREATE TABLE `site_subspecialty_drug` (... ... done (time: 0.024s)
+		> execute SQL: CREATE TABLE `site_subspecialty_operative_device` (... ... done (time: 0.023s)
+		> execute SQL: CREATE TABLE `specialty` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `specialty_type` (... ... done (time: 0.016s)
+		> execute SQL: CREATE TABLE `subspecialty` (... ... done (time: 0.018s)
+		> execute SQL: CREATE TABLE `subspecialty_subsection` (... ... done (time: 0.020s)
+		> execute SQL: CREATE TABLE `tbl_audit_trail` (... ... done (time: 0.026s)
+		> execute SQL: CREATE TABLE `user` (... ... done (time: 0.024s)
+		> execute SQL: CREATE TABLE `user_firm` (... ... done (time: 0.021s)
+		> execute SQL: CREATE TABLE `user_firm_preference` (... ... done (time: 0.017s)
+		> execute SQL: CREATE TABLE `user_firm_rights` (... ... done (time: 0.023s)
+		> execute SQL: CREATE TABLE `user_service_rights` (... ... done (time: 0.022s)
+		> execute SQL: CREATE TABLE `user_session` (... ... done (time: 0.010s)
+		> execute SQL: CREATE TABLE `user_site` (... ... done (time: 0.029s)
+Importing address data...
+    > insert into address ...CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column `openeyes`.`address`.`date_start` at row 1. The SQL statement executed was: INSERT INTO `address` (`id`, `address1`, `address2`, `city`, `postcode`, `county`, `country_id`, `email`, `parent_class`, `parent_id`, `date_start`, `date_end`, `address_type_id`) VALUES (:id, :address1, :address2, :city, :postcode, :county, :country_id, :email, :parent_class, :parent_id, :date_start, :date_end, :address_type_id) in /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbCommand.php(1278): CDbCommand->execute()
+#1 /var/www/openeyes/vendor/yiisoft/yii/framework/db/CDbMigration.php(178): CDbCommand->insert()
+#2 /var/www/openeyes/protected/components/OEMigration.php(173): CDbMigration->insert()
+#3 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(3284): OEMigration->initialiseData()
+#4 /var/www/openeyes/protected/migrations/m130913_000000_consolidation.php(197): m130913_000000_consolidation->createTables()
+#5 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(415): m130913_000000_consolidation->up()
+#6 /var/www/openeyes/vendor/yiisoft/yii/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp()
+#7 [internal function]: MigrateCommand->actionUp()
+#8 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs()
+#9 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run()
+#10 /var/www/openeyes/vendor/yiisoft/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#11 /var/www/openeyes/vendor/yiisoft/yii/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#12 /var/www/openeyes/vendor/yiisoft/yii/framework/yiic.php(33): CApplication->run()
+#13 /var/www/openeyes/protected/yiic.php(27): require_once('/var/www/openey...')
+#14 /var/www/openeyes/protected/yiic(4): require_once('/var/www/openey...')
+#15 {main}

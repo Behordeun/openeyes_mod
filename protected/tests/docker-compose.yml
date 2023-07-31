@@ -1,0 +1,56 @@
+version: "3.4"
+
+# NOTE is is recommended to run `docker-compose down` before `docker-compose up` This will ensure that the database is refreshed on each run.
+# E.g, docker-compose down && docker-compose up
+#
+# To see individual logs - use docker-compose logs [phpunit | behat ]
+#
+# To run only a single test suite, use `docker-compose up [phpunit | selenium behat ]
+## Note that the selenium service is needed for the behat service
+#
+# If you want to view the selenium tests runing, connect a vnv viewer to localhost
+
+services:
+  db:
+    image: toukanlabsdocker/oe-sample-db:mariadb_10.4-v4.1.3
+    environment:
+      MYSQL_ROOT_PASSWORD: openeyes
+      TZ: "Europe/London"
+    stdin_open: true
+    tty: true
+    ports:
+      - "3333:3306"
+    command:
+      # Changing log_file_size to allow lightning image processing of larger document image events
+      - "--innodb_log_file_size"
+      - "128M"
+      # disable binary logging (as not needed for development, but logs MUST be enabled for production)
+      - "--disable-log-bin"
+
+  phpunit:
+    image: ${OEWEB_IMAGE_NAME:-appertaopeneyes/web:php7}
+    environment:
+      OE_MODE: "TEST"
+      TESTS_TO_RUN: "PHPUNIT"
+      DATABASE_HOST: "db"
+      MYSQL_ROOT_PASSWORD: openeyes
+      ENABLE_CRON: "FALSE"
+      WAIT_HOSTS_TIMEOUT: "120"
+      WAIT_SLEEP_INTERVAL: "2"
+      USE_DEMO_DATA: "FALSE"
+      DATABASE_NAME: "openeyes"
+      DATABASE_USER: "openeyes"
+      DATABASE_PASS: "openeyes"
+      OE_INSTITUTION_CODE: "NEW"
+    secrets:
+      - source: SSH_PRIVATE_KEY
+    stdin_open: true
+    tty: true
+    depends_on:
+     - "db"
+    volumes:
+      - "../..:/var/www/openeyes:delegated"
+
+secrets:
+  SSH_PRIVATE_KEY:
+    file: ~/.ssh/id_rsa

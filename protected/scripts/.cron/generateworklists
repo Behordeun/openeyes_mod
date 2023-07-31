@@ -1,0 +1,2 @@
+# Run daily to generate new worklist slots
+${CRON_GENERTAEWORKLISTS_SCH:-20 00 * * *}  bash $WROOT/protected/scripts/cronrunner.sh 'bash $WROOT/protected/scripts/generateworklists.sh'

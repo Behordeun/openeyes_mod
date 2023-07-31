@@ -1,0 +1,2 @@
+# Retrieve latest optometrist portal examaination events
+${CRON_PORTALEXAMS_SCH:-0 * * * *}  bash $WROOT/protected/scripts/cronrunner.sh '[ "${OE_PORTAL_ENABLED^^}" = "TRUE" ] && bash $WROOT/protected/scripts/portalexams.sh || echo disabled'
